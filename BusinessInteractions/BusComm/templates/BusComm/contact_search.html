@@ -1,0 +1,68 @@
+{% load static %}
+
+<script type="text/javascript">
+
+$(window).scroll(function() {
+  sessionStorage.scrollTop = $(this).scrollTop();
+});
+
+$(document).ready(function() {
+  if (sessionStorage.scrollTop != "undefined") {
+    $(window).scrollTop(sessionStorage.scrollTop);
+  }
+});
+
+function myFunction(){
+	$("form").submit();
+}
+
+</script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+
+<div>
+		
+		{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+	<div style="padding-left:30px">
+		<form method="GET" action="/BusComm/contacts">
+		    <div style="width: 100px; float:left">
+		    	<p>Contact ID:</p>
+		    </div>
+		    <div style="width: 200px; float:left">
+		    	<input type="text" name="cid" id="id_q" value="{{ query }}" float="right">
+		    </div>
+
+		    <br>
+		    <br>
+
+		    <div style="width: 100px; float:left">
+		    	<p>First Name:</p>
+		    </div> 
+		    <div style="width: 200px; float:left">
+		    	<input type="text" name="first_name" id="id_q" value="{{ query }}" float="right">
+		    </div>
+		    <div style="width: 100px; float:left">
+		    	<p>Last Name:</p>
+		    </div> 
+		    <div style="width: 200px; float:left">
+		    	<input type="text" name="last_name" id="id_q" value="{{ query }}" float="right">
+		    </div>
+
+		    <br>
+		    <br>
+
+		    <div style="width: 100px; float:left">
+		    	<p>Employer:</p>
+		    </div> 
+		    <div style="width: 200px; float:left">
+		    	<input type="text" name="employer" id="id_q" value="{{ query }}" float="right">
+		    </div>
+		    <br>
+		    <input type="submit" value="Submit" />
+
+		</form>
+</div>
+
+
+
+

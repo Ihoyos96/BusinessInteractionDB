@@ -1,0 +1,64 @@
+<table id="myTable">
+		    <tr>
+		        <th>EID</th>
+		        <th>DID</th>
+		        <th>Frist Name</th>
+		        <th>Last Name</th>
+		        <th>Sex</th>
+		        <th>DOB</th>
+		        <th>Job Title</th>
+		        <th>Manager</th>
+		        <th>Email</th>
+		        <th>Address</th>
+		        <th>Salary</th>
+		    </tr>
+		    {% for employee in employees %}
+		    <tr> 
+		        <td>{{ employee.eid }}</td>
+		        <td>{{ employee.did }}</td>
+		        <td>{{ employee.first_name }}</td>
+		        <td>{{ employee.last_name }}</td>
+		        <td>{{ employee.sex }}</td>
+		        <td>{{ employee.dob }}</td>
+		        <td>{{ employee.job_title }}</td>
+		        <td>{{ employee.manager }}</td>
+		        <td>{{ employee.email_address }}</td>
+		        <td>{{ employee.address }}</td>
+		        <td>{{ employee.salary }}</td>
+		    </tr>
+		    {% endfor %}
+		</table>
+
+
+		{% if results %}
+		    {% for result in results %}
+
+		       <body>
+		        <font size="2.8">
+		        Employee Id: <tab3>{{ result.eid }}</tab3>
+		        <br/>
+		        Department: <tab3>{{ result.did }}</tab3>
+		        <br/>
+		        First Name: <tab3>{{ result.first_name }}</tab3>
+		        <br/>
+		        Last Name: <tab3>{{ result.last_name }}</tab3>
+		        <br/>
+		        Sex: <tab3>{{ result.sex }}</tab3>
+		        <br/>
+		        DOB: <tab3>{{ result.dob }}</tab3>
+		        <br/>
+		        Job Title: <tab3>{{ result.job_title }}</tab3>
+		        <br/>
+		        Manager: <tab3>{{ result.manager }}</tab3>
+		        <br/>
+		        Email Address: <tab3>{{ result.email_address }}</tab3>
+		        <br/>
+		        Physical Address: <tab3>{{ result.address }}</tab3>
+		        <br/>
+		        Salary: <tab3>{{ result.salary }}</tab3>
+		      </font>
+		      </body>
+		    {% endfor %}
+		  {% else %}
+		</div>
+		{% endif %}

@@ -1,0 +1,48 @@
+<style>
+    tab1 { padding-left: 4em; }
+    tab2 { padding-left: 8em; }
+    tab3 { padding-left: 12em; }
+</style>
+
+<div align="center">
+  <h2> Results </h2>
+</div>
+<div align="">
+  {% if results %}
+    {% for result in results %}
+
+       <body>
+        <font size="2.8">
+        Employee Id: <tab3>{{ result.eid }}</tab3>
+        <br/>
+        Department: <tab3>{{ result.did }}</tab3>
+        <br/>
+        First Name: <tab3>{{ result.first_name }}</tab3>
+        <br/>
+        Last Name: <tab3>{{ result.last_name }}</tab3>
+        <br/>
+        Sex: <tab3>{{ result.sex }}</tab3>
+        <br/>
+        DOB: <tab3>{{ result.dob }}</tab3>
+        <br/>
+        Job Title: <tab3>{{ result.job_title }}</tab3>
+        <br/>
+        Manager: <tab3>{{ result.manager }}</tab3>
+        <br/>
+        Email Address: <tab3>{{ result.email_address }}</tab3>
+        <br/>
+        Physical Address: <tab3>{{ result.address }}</tab3>
+        <br/>
+        Salary: <tab3>{{ result.salary }}</tab3>
+      </font>
+      </body>
+    {% endfor %}
+  {% else %}
+</div>
+
+    <h3 class='error'>Please enter a valid employee ID</h3>
+    <form method="get" action="/BusComm/search_employees">
+      Enter Employee ID:<input type="text" name="q" id="id_q" value="{{ query }}"/>
+      <input type="submit" value="Search" />
+    </form>
+{% endif %}

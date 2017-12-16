@@ -1,0 +1,58 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+
+<div>
+		
+		{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+	<div style="padding-left:30px">
+		<form method="GET" action="/BusComm/interactions">
+		    <div style="width: 100px; float:left">
+		    	<p>Contact ID:</p>
+		    </div>
+		    <div style="width: 200px; float:left">
+		    	<input type="text" name="cid" id="departing" value="{{ query }}" float="right">
+		    </div>
+
+		    <br>
+		    <br>
+
+		    <div style="width: 100px; float:left">
+		    	<p>From Date:</p>
+		    </div> 
+		    <div style="width: 200px; float:left">
+		    	<input type="date" Placeholder="yyyy-dd-mm" name="date_from" id="id_q" value="{{ query }}" float="right">
+		    </div>
+		    <div style="width: 100px; float:left">
+		    	<p>To Date:</p>
+		    </div> 
+		    <div style="width: 200px; float:left">
+		    	<input type="date" Placeholder="yyyy-dd-mm" name="date_to" id="id_q" value="{{ query }}" float="right">
+		    </div>
+
+		    <br>
+		    <br>
+
+		    <div style="width: 100px; float:left">
+		    	<p>Employer:</p>
+		    </div> 
+		    <div style="width: 200px; float:left">
+		    	<input type="text" Placeholder="Company Name" name="employer" id="id_q" value="{{ query }}" float="right">
+		    </div>
+		    <div style="width: 100px; float:left">
+		    	<p>Medium:</p>
+		    </div> 
+		    <div style="width: 200px; float:left">
+		    	<input type="text" Placeholder="(Phone Call, Email etc..)" name="medium" id="id_q" value="{{ query }}" float="right">
+		    </div>
+		    <br>
+		    <br>
+		    <input type="submit" value="Submit" />
+
+		</form>
+</div>
+
+
+
+
